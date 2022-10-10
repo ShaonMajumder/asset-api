@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::select('id','title','description','image')->get();
+        return Product::select('id','title','description','amount','image')->get();
     }
 
     /**
@@ -42,6 +42,7 @@ class ProductController extends Controller
         $request->validate([
             'title'=>'required',
             'description'=>'required',
+            'amount'=>'required',
             'image'=>'required|image'
         ]);
 
@@ -97,6 +98,7 @@ class ProductController extends Controller
         $request->validate([
             'title'=>'required',
             'description'=>'required',
+            'amount'=>'required',
             'image'=>'nullable'
         ]);
 
